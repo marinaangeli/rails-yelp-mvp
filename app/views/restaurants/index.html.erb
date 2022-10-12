@@ -1,0 +1,11 @@
+<div class="container">
+      <h1 class="mr-5">Restaurants</h1>
+      <%= link_to "Add a New Restaurant", new_restaurant_path, class: "btn btn-success mb-5 py-0" %>
+
+  <div id="restaurants">
+    <% @restaurants.each do |restaurant| %>
+      <%= render restaurant %>
+        <%= link_to "Show this restaurant", restaurant, class: "btn btn-info mb-5 py-0" %>
+    <% end %>
+  </div>
+</div>

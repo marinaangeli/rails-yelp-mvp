@@ -1,0 +1,18 @@
+<div class="container">
+  <div id="restaurants">
+      <%= render @restaurant %>
+      <div class= "d-flex">
+        <%= link_to "Back to Restaurant List", restaurants_path, class: "btn btn-secondary m-2 mb-5 py-0" %>
+        <%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-success m-2 mb-5 py-0" %>
+        <%= link_to "See Reviews", restaurant_reviews_path(@restaurant), class: "btn btn-info m-2 mb-5 py-0" %>
+      </div>
+      <div>
+        <% @restaurant.reviews.each do |review| %>
+          <div class="list-group-item">
+            <h5>Rating: <%= review.rating%></h3>
+            <p><strong>Review:</strong> <%= review.content %></p>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>

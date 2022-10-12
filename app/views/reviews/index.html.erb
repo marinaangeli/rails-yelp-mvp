@@ -1,0 +1,10 @@
+<div class="container">
+      <h1 class="mr-5">Reviews for <%= @restaurant.name %></h1>
+      <%= link_to "Back to Restaurant Info", restaurant_path(@restaurant), class: "btn btn-info mb-5 py-0" %>
+
+  <div id="restaurants">
+    <% @reviews.each do |review| %>
+      <%= render review %>
+    <% end %>
+  </div>
+</div>
